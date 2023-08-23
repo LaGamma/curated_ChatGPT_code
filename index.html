@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modal Popup</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom styling for the modal */
+    .modal-content {
+      padding: 20px;
+    }
+
+    .close {
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    #submitBtn {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    #output {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Your existing page content goes here -->
+  <button id="openModalBtn">OpenModal</button>
+  <div id="output"></div>
+
+  <!-- Modal Popup -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Input Form</h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" required>
+      <br>
+      <label for="age">Age:</label>
+      <input type="number" id="age" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" required>
+      <br>
+      <button id="submitBtn">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    // Get the modal element
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var openModalBtn = document.getElementById("openModalBtn");
+
+    // Get the <span> element that closes the modal
+    var closeBtn = document.getElementsByClassName("close")[0];
+
+    // Function to open the modal
+    function openModal() {
+      modal.style.display = "block";
+    }
+
+    // Function to close the modal
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    // Event listener for opening the modal
+    openModalBtn.addEventListener("click", openModal);
+
+    // Event listener for closing the modal
+    closeBtn.addEventListener("click", closeModal);
+
+    // Function to handle form submission
+    function handleSubmit(event) {
+
+      // Get the values from the input fields
+      var nameInput = document.getElementById("name").value;
+      var ageInput = document.getElementById("age").value;
+      var emailInput = document.getElementById("email").value;
+
+      // Generate the text output
+      var textOutput = "Name: " + nameInput + "<br>";
+      textOutput += "Age: " + ageInput + "<br>";
+      textOutput += "Email: " + emailInput;
+
+      // Display the output
+      var outputDiv = document.getElementById("output");
+      outputDiv.innerHTML = textOutput;
+
+      // Clear the input fields
+      document.getElementById("name").value = "";
+      document.getElementById("age").value = "";
+      document.getElementById("email").value = "";
+
+      // Close the modal
+      closeModal();
+    }
+
+    // Event listener for form submission
+    var submitBtn = document.getElementById("submitBtn");
+    submitBtn.addEventListener("click", handleSubmit);
+  </script>
+</body>
+</html>

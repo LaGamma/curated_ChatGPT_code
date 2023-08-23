@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Satisfying Button</title>
+  <style>
+    /* Custom CSS for the button */
+    .satisfying-button {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .satisfying-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .satisfying-button:focus {
+      outline: none;
+    }
+  </style>
+
+  <style>
+/* Custom CSS for the button */
+.satisfying-button {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  font-size: 18px;
+    border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.satisfying-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.satisfying-button:focus {
+  outline: none;
+}
+
+.pulse {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+  </style>
+
+  <style>
+.pulse {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 123, 255, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0, 123, 255, 0.8);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 123, 255, 0.4);
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Your existing page content goes here -->
+
+  <!-- Satisfying Button -->
+  <button class="satisfying-button" onclick="playSatisfyingAnimation()">Click Me!</button>
+
+  <script>
+    // JavaScript function to play the satisfying animation
+    function playSatisfyingAnimation() {
+      // Your animation code here
+      // For example, you can change the background color, add a pulse effect,
+      // or include any other visually appealing transition
+
+      // Example: Change the background color on button click
+      var button = document.querySelector('.satisfying-button');
+      button.style.backgroundColor = '#ff6b6b';
+
+      // Example: Add a pulse effect on button click
+      button.classList.add('pulse');
+
+      // You can customize the animation to create a more engaging button experience
+    }
+  </script>
+  
+</body>
+</html>
